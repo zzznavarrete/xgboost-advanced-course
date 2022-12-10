@@ -46,7 +46,7 @@ def read_data(path):
 
 
 def run():
-    path = './../ßdata/sales_buy.csv'
+    path = './../data/sales_buy.csv'
     dflist = read_data(path)
 
     df = dflist[0]
