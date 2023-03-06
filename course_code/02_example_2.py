@@ -208,7 +208,7 @@ def run():
 
     
     
-    #############use native booster#####################################   
+    ############# use native booster #####################################   
 
     X_train, X_valid, y_train, y_valid = train_test_split( 
             X, y, test_size = 0.15, random_state = 122) 
@@ -242,8 +242,8 @@ def run():
 
     mod = xgb.train(params=params,
                     dtrain=dtrain,
-                    num_boost_round = 1200,
-                    early_stopping_rounds=50, 
+                    num_boost_round = 1200, # Número máximo de iteraciones que el algoritmo va a correr
+                    early_stopping_rounds=50, # Número de rondas hacia el futuro de la que ve hasta el momento para determinar si parar el entrenamiento o no
                     evals=[(dvalid,'valid'), (dtrain,'train')],
                     verbose_eval=20)
 
@@ -303,3 +303,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+    
