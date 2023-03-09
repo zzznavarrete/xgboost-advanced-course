@@ -167,7 +167,7 @@ important_var_gain = [(X_new_df.columns[index], important_values[index]) for ind
 # either explicitly or implicitly (e.g, Lasso), 
 # the threshold used is 1e-5. Otherwise, “mean” is used by default.
 modelselect = SelectFromModel(reg, prefit=True)
-X_new = model.transform(X_new_df)
+X_new = modelselect.transform(X_new_df)
 X_new.shape
 
 # we'd better use data frame
